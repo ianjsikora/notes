@@ -42,3 +42,7 @@ class TABLE_NAME(models.Model):
 ````
 
 * In virtualenv, <code>python manage.py makemigrations</code>
+* In virtualenv, <code>python manage.py migrate</code>
+
+# Setting up Django Admin
+* In the virtualenv in the PROJECT_NAME directory, <code>'django.contrib.admin',</code>
