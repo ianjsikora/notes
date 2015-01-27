@@ -1,4 +1,4 @@
-# :Setting up Django
+# Setting up Django
 
 * In the terminal, <code>mkvirtualenv APP_NAME</code>
 * In the virtualenv, <code>pip install django</code>
