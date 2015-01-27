@@ -10,9 +10,9 @@ Notes for future use
 
 
 Setting up Django:
-1. <code>mkvirtualenv APP_NAME</code>
-2. <code>pip install django</code>
-3. <code>pip install psycopg2</code>
+1. <code>mkvirtualenv APP_NAME</code> 
+2. <code>pip install django</code> 
+3. <code>pip install psycopg2</code> 
 - 2. 
 - 3. 
 - 4. <code>django-admin.py startproject PROJECT_NAME</code>
