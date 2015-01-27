@@ -54,5 +54,8 @@ class TABLE_NAME(models.Model):
 from django.contrib import admin
 from your_app.models import TABLE_NAME
 
-admin.site.register(TABLE_NAME)
+class TABLE_NAMEAdmin(admin.ModelAdmin):
+    fields = ['variable1','variable2']
+
+admin.site.register(TABLE_NAME, TABLE_NAMEAdmin)
 ````
