@@ -31,13 +31,13 @@ except ImportError:
 * In PyCharm project, open <code>settings.py</code> and in <code>INSTALLED_APPS</code> add <code>'APP_NAME'</code>
 
 ### Creating Data Model
-* In <code>models.py</code>, under <code>from django.db import models</code>
-''''Python
+* In <code>models.py</code>, under <code Python>from django.db import models</code>
+````Python
 class TABLE_NAME(models.Model):
     variable1 = models.CharField(max_length=120)
     variable2 = models.CharField(max_length=40, null=True)
 
     def __unicode__(self):
         return u"{}".format(self.variable1)
-''''
+````
 
