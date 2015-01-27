@@ -5,9 +5,9 @@
 * In the virtualenv, <code>pip install psycopg2</code>
 * In the virtualenv, <code>django-admin.py startproject PROJECT_NAME</code>
 * In the virtualenv,  <code>psql postgres</code>
-* In postgres, <code>create database PROJECT_NAME;</code>
-* In the PyCharm project, <code>local_settings.py</code>
-* In <code>local_settings.py</code>
+* In postgres, open <code>create database PROJECT_NAME;</code>
+* In PyCharm, open <code>local_settings.py</code>
+* In <code>local_settings.py</code> paste
 ````Python
 DATABASES = {
     'default': {
@@ -16,7 +16,7 @@ DATABASES = {
     }
 }
 ````
-* In <code>settings.py</code>, under the <code>DATABASES</code> section
+* In <code>settings.py</code>, under the <code>DATABASES</code> section paster
 ````Python
 try:
     from local_settings import *
@@ -31,7 +31,7 @@ except ImportError:
 * In PyCharm project, open <code>settings.py</code> and in <code>INSTALLED_APPS</code> add <code>'APP_NAME'</code>
 
 ### Creating Data Model
-* In <code>models.py</code>, under <code>from django.db import models</code>
+* In <code>models.py</code>, under <code>from django.db import models</code> paste
 ````Python
 class TABLE_NAME(models.Model):
     variable1 = models.CharField(max_length=120)
@@ -45,4 +45,16 @@ class TABLE_NAME(models.Model):
 * In virtualenv, <code>python manage.py migrate</code>
 
 # Setting up Django Admin
-* In the virtualenv in the PROJECT_NAME directory, <code>'django.contrib.admin',</code>
+* In virtualenv, <code>python manage.py createsuperuser</code>
+* In <code>Username: </code>, enter an admin_name
+* In <code>Email address: </code>, enter admin_email@email.com
+* In <code>Password: </code>, enter a password
+
+* In PyCharm, check <code>settings.py</code> under <code>INSTALLED_APPS</code> and make sure you see <code>'django.contrib.admin',</code>
+* In PyCharm, open <code>admin.py</code> and paste 
+````Python
+from django.contrib import admin
+from your_app.models import TABLE_NAME
+
+admin.site.register(TABLE_NAME)
+````
