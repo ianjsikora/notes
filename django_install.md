@@ -31,7 +31,7 @@ except ImportError:
 * In PyCharm project, open <code>settings.py</code> and in <code>INSTALLED_APPS</code> add <code>'APP_NAME'</code>
 
 ### Creating Data Model
-* In <code>models.py</code>, under <code Python>from django.db import models</code>
+* In <code>models.py</code>, under <code>from django.db import models</code>
 ````Python
 class TABLE_NAME(models.Model):
     variable1 = models.CharField(max_length=120)
@@ -41,3 +41,4 @@ class TABLE_NAME(models.Model):
         return u"{}".format(self.variable1)
 ````
 
+* In virtualenv, <code>python manage.py makemigrations</code>
