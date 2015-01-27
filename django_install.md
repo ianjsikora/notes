@@ -1,6 +1,6 @@
-# Setting up Django
+# Setting up Django Project
 
-* In the terminal, <code>mkvirtualenv APP_NAME</code>
+* In the terminal, <code>mkvirtualenv PROJECT_NAME</code>
 * In the virtualenv, <code>pip install django</code>
 * In the virtualenv, <code>pip install psycopg2</code>
 * In the virtualenv, <code>django-admin.py startproject PROJECT_NAME</code>
@@ -24,6 +24,10 @@ except ImportError:
     pass
 ````
 * In Pycharm, click on PyCharm -> Preferences -> Project Interpreter -> Gear Icon -> Add Local. Go to your home directory -> .virtualenvs -> PROJECT_NAME -> bin -> <code>python</code>
-* Something
+
+# Setting up Django App
+* In virtualenv, <code>cd PROJECT_NAME</code>
+* In virtualenv, <code>python manage.py startapp APP_NAME</code>
+* In PyCharm projecrt, open <code>settings.py</code> and in <code>INSTALLED_APPS</code> add <code>'APP_NAME'</code>
 * Something
 
