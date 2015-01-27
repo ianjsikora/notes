@@ -1,6 +1,14 @@
 # notes
 Notes for future use
 
+1. First ordered list item
+2. Another item
+⋅⋅* Unordered sub-list. 
+1. Actual numbers don't matter, just that it's a number
+⋅⋅1. Ordered sub-list
+4. And another item.
+
+
 Setting up Django:
 1. <code>mkvirtualenv APP_NAME</code>
 2. <code>pip install django</code>
