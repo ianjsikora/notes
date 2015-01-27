@@ -41,6 +41,17 @@ class TABLE_NAME(models.Model):
     def __unicode__(self):
         return u"{}".format(self.variable1)
 ````
+* In <code>admin.py</code>, under <code>from django.contrib import admin</code> paste 
+````Python
+from APP_NAME.models import TABLE_NAME
+
+class TABLE_NAMEAdmin(admin.ModelAdmin):
+    fields = ('variable1', 'variable2')
+    search_fields = ('variable1',)
+
+
+admin.site.register(TABLE_NAME, TABLE_NAMEAdmin)
+````
 * In virtualenv, <code>python manage.py makemigrations</code>
 * In virtualenv, <code>python manage.py migrate</code>
 
