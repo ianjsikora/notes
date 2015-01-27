@@ -16,4 +16,15 @@ DATABASES = {
     }
 }
 ````
-*
+* In <code>settings.py</code>, under the <code>DATABASES</code> section
+````Python
+try:
+    from local_settings import *
+except ImportError:
+    pass
+````
+* In Pycharm, 
+** Click on PyCharm -> Preferences -> Project Interpreter
+** Click on the Gear Icon -> Add Local
+** Go to your home directory -> .virtualenvs -> writers -> bin -> file named <code>Python</code>
+
