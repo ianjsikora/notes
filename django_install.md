@@ -24,7 +24,7 @@ except ImportError:
     pass
 ````
 * In Pycharm, 
-** Click on PyCharm -> Preferences -> Project Interpreter
-** Click on the Gear Icon -> Add Local
-** Go to your home directory -> .virtualenvs -> writers -> bin -> file named <code>Python</code>
+⋅⋅* Click on PyCharm -> Preferences -> Project Interpreter
+⋅⋅* Click on the Gear Icon -> Add Local
+⋅⋅* Go to your home directory -> .virtualenvs -> writers -> bin -> file named <code>Python</code>
 
