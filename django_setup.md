@@ -46,9 +46,8 @@ class TABLE_NAME(models.Model):
 # Setting up Django Admin
 * In virtualenv, <code>python manage.py createsuperuser</code>
 * In <code>Username: </code>, enter an admin_name
-* In <code>Email address: </code>, enter admin_email at email.com
+* In <code>Email address: </code>, enter admin_email
 * In <code>Password: </code>, enter a password
-
 * In PyCharm, check <code>settings.py</code> under <code>INSTALLED_APPS</code> and make sure you see <code>'django.contrib.admin',</code>
 * In PyCharm, open <code>admin.py</code> and paste 
 ````Python
