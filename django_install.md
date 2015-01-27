@@ -4,7 +4,7 @@ Notes for future use
 1. First ordered list item
 2. Another item
 ⋅⋅* Unordered sub-list. 
-1. <code>mkvirtualenv APP_NAME</code>
+1.  <code>mkvirtualenv APP_NAME</code>
 ⋅⋅1. Ordered sub-list
 4. And another item.
 
