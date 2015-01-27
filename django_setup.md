@@ -40,7 +40,6 @@ class TABLE_NAME(models.Model):
     def __unicode__(self):
         return u"{}".format(self.variable1)
 ````
-
 * In virtualenv, <code>python manage.py makemigrations</code>
 * In virtualenv, <code>python manage.py migrate</code>
 
