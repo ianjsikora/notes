@@ -4,6 +4,7 @@
 * In the virtualenv, <code>pip install django</code>
 * In the virtualenv, <code>pip install psycopg2</code>
 * In the virtualenv, <code>django-admin.py startproject PROJECT_NAME</code>
+* Run postgres -D /usr/local/var/postgres if your database isn't running
 * In the virtualenv,  <code>psql postgres</code>
 * In postgres, open <code>create database PROJECT_NAME;</code>
 * In PyCharm, open <code>local_settings.py</code>
