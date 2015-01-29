@@ -7,7 +7,7 @@
 * If the DB isn't running, in the virtualenv, run <code>postgres -D /usr/local/var/postgres</code>
 * In the virtualenv,  <code>psql postgres</code>
 * In postgres, open <code>create database PROJECT_NAME;</code>
-* In PyCharm, open <code>local_settings.py</code>
+* In PyCharm, create the file <code>local_settings.py</code>
 * In <code>local_settings.py</code> paste
 ````Python
 DATABASES = {
