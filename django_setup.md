@@ -27,7 +27,7 @@ except ImportError:
 * In Pycharm, click on PyCharm -> Preferences -> Project Interpreter -> Gear Icon -> Add Local. Go to your home directory -> .virtualenvs -> PROJECT_NAME -> bin -> <code>python</code>
 
 ## Setting up Django App
-* In virtualenv, <code>cd PROJECT_NAME</code>
+* In virtualenv, <code>cd PROJECT_NAME</code> (same level as <code> manage.py</code>
 * In virtualenv, <code>python manage.py startapp APP_NAME</code>
 * In PyCharm project, open <code>settings.py</code> and in <code>INSTALLED_APPS</code> add <code>'APP_NAME'</code>
 
