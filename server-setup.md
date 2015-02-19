@@ -11,11 +11,11 @@
 * In the server (terminal),  <code>sudo apt-get install nginx</code>
 * In the server (terminal),  <code>sudo apt-get install git</code>
 * If a simple HTTP page, then:
-* In the server (terminal),  <code>cd /etc/nginx/sites-enabled/</code>
-* In the server (terminal),  <code>sudo mv default PROJECT_NAME.conf</code>
-* In the server (terminal),  <code>sudo nano PROJECT_NAME.conf</code>
-* Edit the location of the website from <code>root /usr/share/nginx/html;</code> to <code>root /home/ubuntu/rocketu-portfolio;</code>
-* In the server (terminal),  <code>sudo service nginx restart</code>
+ * In the server (terminal),  <code>cd /etc/nginx/sites-enabled/</code>
+ * In the server (terminal),  <code>sudo mv default PROJECT_NAME.conf</code>
+ * In the server (terminal),  <code>sudo nano PROJECT_NAME.conf</code>
+ * Edit the location of the website from <code>root /usr/share/nginx/html;</code> to <code>root /home/ubuntu/rocketu-portfolio;</code>
+ * In the server (terminal),  <code>sudo service nginx restart</code>
 
 ## Getting Website Files from Github
 * In the server (terminal),  <code>ssh-keygen -t rsa</code>
