@@ -15,7 +15,7 @@
  * In the server (terminal),  <code>cd /etc/nginx/sites-enabled/</code>
  * In the server (terminal),  <code>sudo mv default PROJECT_NAME.conf</code>
  * In the server (terminal),  <code>sudo nano PROJECT_NAME.conf</code>
- * Edit the location of the website from <code>root /usr/share/nginx/html;</code> to <code>root /home/ubuntu/rocketu-portfolio;</code>
+ * Edit the location of the website from <code>root /usr/share/nginx/html;</code> to <code>root /home/ubuntu/PROJECT_NAME;</code>
  * In the server (terminal),  <code>sudo service nginx restart</code>
 
 ## Getting Website Files from Github
@@ -98,3 +98,35 @@ autostart=true
 autorestart=true
 redirect_stderr=true
 ```
+
+## Setup Nginx
+* In the server (terminal),  <code>sudo touch /etc/nginx/sites-available/PROJECT_NAME.conf</code>
+* In the server (terminal),  <code>sudo nano /etc/nginx/sites-available/PROJECT_NAME.conf</code>
+```
+server {
+    server_name your_ec2_url;
+
+    access_log off;
+
+    location /static/ {
+        alias /home/ubuntu/static/;
+    }
+
+    location / {
+        proxy_pass http://127.0.0.1:8001;
+        proxy_set_header X-Forwarded-Host $server_name;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header Host $host;
+    }
+}
+```
+* In the server (terminal),  <code>sudo ln -s /etc/nginx/sites-available/PROJECT_NAME.conf /etc/nginx/sites-enabled/PROJECT_NAME.conf</code>
+* In the server (terminal),  <code>sudo rm /etc/nginx/sites-enabled/default</code>
+* In the server (terminal),  <code>sudo service nginx restart</code>
+
+## Setup Nginx
+* In the server (terminal),  <code>nano local_settings.py</code>
+* In local settings, set <code>DEBUG = False</code>
+* In local settings, set <code>ALLOWED_HOSTS = ['your_ec2_url']</code>
+* In local settings, set <code>sudo service supervisor restart</code>
+* In local settings, set <code>sudo service nginx restart</code>
