@@ -23,3 +23,47 @@
 * In the server (terminal),  <code>cat ~/.ssh/id_rsa.pub</code> and paste the key in Github
 * In the server (terminal),  <code>cd ~/</code>
 * In the server (terminal),  <code>git clone GITHUB_REPO</code>
+
+## Make Virtualenv
+* In the server (terminal),  <code>sudo apt-get install python-pip python-dev build-essential</code>
+* In the server (terminal),  <code>sudo pip install pip --upgrade</code>
+* In the server (terminal),  <code>sudo pip install virtualenv --upgrade</code>
+* In the server (terminal),  <code>sudo pip install virtualenvwrapper</code>
+* In the server (terminal),  <code>mkdir ~/.virtualenvs</code>
+* In the server (terminal),  <code>emacs ~/.bashrc</code>
+* In the server (terminal),  <code>export WORKON_HOME=~/.virtualenvs</code>
+* In the server (terminal),  <code>source ~/.bashrc</code>
+* In the server (terminal),  <code>mkvirtualenv PROJECT_NAME</code>
+
+## Setup Postgres
+* In the server (terminal),  <code>sudo adduser PROJECT_NAME</code>
+* In the server (terminal),  <code>sudo apt-get install postgresql postgresql-contrib libpq-dev</code>
+* In the server (terminal),  <code>createuser --interactive</code> and name the user PROJECT_NAME and remember 'myawesomepassword'
+* In the server (terminal),  <code>createdb PROJECT_NAME</code> and Cmd-D back to user:ubuntu
+* In the server (terminal),  <code>sudo -i -u PROJECT_NAME</code>
+* In the server (terminal),  <code>ALTER USER blog_analytics WITH PASSWORD 'myawesomepassword';</code>
+
+## Setup Postgres
+* In the server (terminal),  <code>touch local_settings.py</code>
+* In the server (terminal),  <code>nano local_settings.py</code>
+* In the server (terminal),
+```
+import os
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'PROJECT_NAME',
+        'HOST': 'localhost',
+        'USER': 'PROJECT_NAME',
+        'PASSWORD': 'myawesomepassword'
+    }
+}
+
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_URL = '/static/'
+```
+
+
+
+
