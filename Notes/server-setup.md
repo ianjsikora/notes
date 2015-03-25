@@ -46,7 +46,7 @@
 ## Setup Postgres
 * In the server (terminal),  <code>touch local_settings.py</code>
 * In the server (terminal),  <code>nano local_settings.py</code>
-* In the server (terminal),
+* In the server (terminal):
 ```
 import os
 DATABASES = {
@@ -64,6 +64,37 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 ```
 
+## Setup Packages
+* In the server (terminal),  <code>pip install -r requirements.txt</code>
+* In the server (terminal),  <code>python manage.py makemigrations</code>
+* In the server (terminal),  <code>python manage.py migrate</code>
+* In the server (terminal),  <code>python manage.py collectstatic</code>
 
+## Setup Gunicorn
+* In the server (terminal),  <code>pip install gunicorn</code>
+* In the server (terminal),  <code>touch PROJECT_NAME/gunicorn.conf.py</code>
+* In the server (terminal),  <code>nano PROJECT_NAME/gunicorn.conf.py</code>
+```
+proc_name = "PROJECT_NAME"
+bind = '127.0.0.1:8001'
+loglevel = "error"
+workers = 2
+```
 
+## Setup Supervisor
+* In the server (terminal),  <code>sudo apt-get install supervisor</code>
+* In the server (terminal),  <code>sudo service supervisor restart</code>
+* In the server (terminal),  <code>sudo touch /etc/supervisor/conf.d/PROJECTS_NAME.conf</code>
+* In the server (terminal),  <code>sudo nano /etc/supervisor/conf.d/PROJECTS_NAME.conf</code>
+```
+[group:PROJECT_NAME]
+programs=gunicorn_PROJECT_NAME
 
+[program:gunicorn_PROJECT_NAME]
+command=/home/ubuntu/.virtualenvs/PROJECT_NAME/bin/gunicorn -c gunicorn.conf.py -p gunicorn.pid wsgi:application --pythonpath /home/ubuntu/PROJECT_NAME/PROJECT_NAME
+directory=/home/ubuntu/PROJECT_NAME
+user=ubuntu
+autostart=true
+autorestart=true
+redirect_stderr=true
+```
