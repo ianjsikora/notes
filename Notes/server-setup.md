@@ -99,7 +99,7 @@ autorestart=true
 redirect_stderr=true
 ```
 
-## Setup Nginx
+## Final Server Cleanup
 * In the server (terminal),  <code>sudo touch /etc/nginx/sites-available/PROJECT_NAME.conf</code>
 * In the server (terminal),  <code>sudo nano /etc/nginx/sites-available/PROJECT_NAME.conf</code>
 ```
